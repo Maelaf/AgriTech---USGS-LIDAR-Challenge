@@ -11,8 +11,15 @@ from logger_creator import CreateLogger
 logger = CreateLogger('DataFetcher')
 logger = logger.get_default_logger()
 
-
+ 
 class DataFetcher():
+    '''
+    It takes in params 
+    polygon : polygon of area we need to crop
+            state : state to do the elevation
+    
+        
+    '''
     def __init__(self, polygon: Polygon, region: str, epsg: str) -> None:
         try:
             self.get_polygon_edges(polygon, epsg)
@@ -26,8 +33,11 @@ class DataFetcher():
         except Exception as e:
             logger.exception('Failed to Instantiate DataFetcher Class Object')
             sys.exit(1)
-
+ 
     def load_pipeline_template(self, file_name='./pipeline_template.json'):
+       '''
+      Read json file and return the string format
+      '''
         try:
             with open(file_name, 'r') as read_file:
                 template = load(read_file)
@@ -41,6 +51,10 @@ class DataFetcher():
             sys.exit(1)
 
     def get_polygon_edges(self, polygon: Polygon, epsg: str):
+        '''
+        gets bounderies and polygons after coordinate system
+        to the coordinate system we use ( 3857 ).
+        '''
         try:
             grid = gpd.GeoDataFrame([polygon], columns=["geometry"])
             grid.set_crs(epsg=epsg, inplace=True)
@@ -65,6 +79,9 @@ class DataFetcher():
                 'Failed to Extract Polygon Edges and Polygon Cropping Bounds')
 
     def get_crop_polygon(self, polygon: Polygon):
+        '''
+        Populate The pipe line with boundary, and return pipeline
+        '''
         polygon_cords = 'POLYGON(('
         for i in list(polygon.exterior.coords):
             polygon_cords += f'{i[0]} {i[1]},'
@@ -158,19 +175,3 @@ class DataFetcher():
         self.elevation_geodf = elevation
 
         return self.elevation_geodf
-
-
-if __name__ == "__main__":
-    MINX, MINY, MAXX, MAXY = [-93.756155, 41.918015, -93.747334, 41.921429]
-    polygon = Polygon(((MINX, MINY), (MINX, MAXY),
-                       (MAXX, MAXY), (MAXX, MINY), (MINX, MINY)))
-
-    df = DataFetcher(polygon=polygon, region="IA_FullState", epsg="4326")
-
-    df.construct_simple_pipeline()
-
-    df.get_data()
-
-    elevation = df.elevation_geodf()
-
-    elevation.sample(10)
