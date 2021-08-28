@@ -22,25 +22,6 @@ This is a python package that domain experts and data scientists can use to fetc
 ## Data Source Used:
 - https://registry.opendata.aws/usgs-lidar/
 
-<hr>
-
-# <a name='progress'></a>Current Progress
-<!-- * Main Tasks
-  - [x] Enable Elevation Data Fetching
-  - [x] Enable Data Loading from saved tif and las/laz files
-  - [ ] Enable Terrian Visualization using retrieved or loaded LiDAR cloud points
-  - [ ] Enable Cloud Point Standardizing/Sub-Sampling
-  - [ ] Enable data augmentation to retrieved geopandas data-frame
-  - [ ] Composing a QuickStart Guide Notebook
-
-* Optional Tasks
-  - [ ] Enable Diagrammatic way of comparing original terrain and subsampled terrain
-  - [ ] Enable Soil-Data Fetching
-  - [ ] Enable Climate-Data Fetching
-  - [ ] Enable interaction with Sentinel public API
-  - [ ] Enable users to download satellite imagery using Sentinels API
-
-<hr> -->
 
 # <a name='install'></a>How to Install
 >The package can be installed directly form the repo using
@@ -49,12 +30,11 @@ pip install .
 ```
 <!-- >When complete the package will be available on PyPi python packages repository. You will be able to install it using the command:
 ```
-pip install 3DEP-Farm
+
 ```
 <hr> -->
 
-# <a name='use'></a>How to Use
-<hr>
+
 
 # <a name='refs'></a>References
 - https://www.earthdatascience.org/courses/use-data-open-source-python/data-stories/what-is-lidar-data/explore-lidar-point-clouds-plasio/
