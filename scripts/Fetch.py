@@ -7,7 +7,7 @@ from shapely.geometry import Polygon
 from shapely.geometry import Point
 from logger_creator import CreateLogger
 
-
+#logger
 logger = CreateLogger('DataFetcher')
 logger = logger.get_default_logger()
 
