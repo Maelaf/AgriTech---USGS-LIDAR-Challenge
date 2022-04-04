@@ -49,7 +49,7 @@ class CreateLogger:
             self.logger.addHandler(handle)
 
     def get_default_logger(self) -> logging.Logger:
-        # Run create_handlers
+        ''' Run create_handlers'''
         self.create_handlers()
         self.logger.setLevel(logging.INFO)
 
