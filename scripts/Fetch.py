@@ -11,7 +11,7 @@ from logger_creator import CreateLogger
 logger = CreateLogger('DataFetcher')
 logger = logger.get_default_logger()
 
- 
+ '''Data fetcher function'''
 class DataFetcher():
     '''
     It takes in params 
