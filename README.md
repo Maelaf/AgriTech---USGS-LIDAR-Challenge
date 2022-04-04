@@ -10,7 +10,7 @@ This is a python package that domain experts and data scientists can use to fetc
 * [License](#license)
 
 # <a name='description'></a>Description
-> **LiDAR** (light detection and ranging)is an active remote sensing system that can be used to measure vegetation height across wide areas. It’s used to map structures like vegetation (height, density leaf area index and other characteristics), buildings, roads etc. Historically it’s been used to generate high resolution elevation datasets. Light is emitted form a rapidly firing laser which reflects off things like buildings and trees on the ground. The reflected light is then received and recorded. 
+> **LiDAR** ( light detection and ranging)is an active remote sensing system that can be used to measure vegetation height across wide areas. It’s used to map structures like vegetation (height, density leaf area index and other characteristics), buildings, roads etc. Historically it’s been used to generate high resolution elevation datasets. Light is emitted form a rapidly firing laser which reflects off things like buildings and trees on the ground. The reflected light is then received and recorded. 
 >
 >In this project we **provide an easy to use installable python module to retrieve data, visualize and transform**
 >
