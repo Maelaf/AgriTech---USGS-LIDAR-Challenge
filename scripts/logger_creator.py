@@ -16,12 +16,12 @@ class CreateLogger:
             self.add_handlers([self.cons_handler])
 
         elif(self.num_handlers == 2):
-            # Create Only FileHandler for file logging
+            '''Create Only FileHandler for file logging'''
             self.create_file_handler(self.file_name)
             self.file_handler.setFormatter(self.create_handle_format(1))
             self.add_handlers([self.file_handler])
         else:
-            # Create Both Handlers
+            '''Create Both Handlers'''
             self.create_console_handler()
             self.create_file_handler(self.file_name)
             self.cons_handler.setFormatter(self.create_handle_format(0))
